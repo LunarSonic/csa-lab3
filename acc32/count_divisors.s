@@ -2,7 +2,6 @@
 n:               .word  0
 loop_counter:    .word  1
 count_div:       .word  0
-const_0:         .word  0
 const_1:         .word  1
 const_neg_1:     .word  -1
 input_addr:      .word  0x80
