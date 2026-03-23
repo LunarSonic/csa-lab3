@@ -7,7 +7,7 @@ bit_mask:        .word  0x80000001         \ маска для 0 и 31 бита
 one_mask:        .word  0x7FFFFFFF         \ маска для проверки на 11
 input_addr:      .word  0x80
 output_addr:     .word  0x84
-temp_addr_for_b: .word  0x88               \ адрес для времнного хранения младших битов
+temp_addr_for_b: .word  0x88               \ адрес для временного хранения младших битов
 
     .text
     .org 0x150
@@ -35,7 +35,7 @@ loop:
 
     load_two_parts +
     @p bit_mask
-    and                      \ выделям 0 и 31 биты
+    and                      \ выделяем 0 и 31 биты
     dup
     if shift_check           \ если результат and с маской = 0, то крайние биты - 00
 
@@ -46,21 +46,21 @@ loop:
     not_palindrome           \ если не 00 и не 11, то это не палиндром
 
 shift_check:
-    shift_parts             
+    shift_parts
     loop
     ;
 
 load_two_parts:
     @b
     a
-    ; 
+    ;
 
 shift_parts:
     @b 2/                    \ сдвиг младших бит вправо
     !b
     a 2*                     \ сдвиг страших бит влево
     a!
-    ;                     
+    ;
 
 is_palindrome:
     lit 1
