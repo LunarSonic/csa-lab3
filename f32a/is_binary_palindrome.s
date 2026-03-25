@@ -1,5 +1,4 @@
     .data
-n:               .word  0
 loop_counter:    .word  16                 \ счётчик для цикла
 high_mask:       .word  0xFFFF0000         \ маска для старших 16 бит
 low_mask:        .word  0x0000FFFF         \ маска для младщих 16 бит
